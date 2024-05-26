@@ -12,7 +12,7 @@ class Stack:
     else:
       return None
     
-  def is_empty(self):
+  def vacia(self):
     return len(self.__elements) == 0
   
   def on_top(self):
