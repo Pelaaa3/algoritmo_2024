@@ -1,4 +1,4 @@
-from pila import Pila
+
 
 def criterio(dato, campo=None):
     dic = {}
@@ -19,7 +19,11 @@ class Lista():
     def __init__(self):
         self.__inicio = None
         self.__tamanio = 0
-
+        
+    def busqueda(list_values, criterio, value):
+        for index, personaje in enumerate(list_values):
+            if personaje[criterio] == value:
+                return index
 
     def insertar(self, dato, campo=None):
         nodo = nodoLista()
@@ -54,13 +58,13 @@ class Lista():
             aux = aux.sig
 
     def barrido_inverso(self):
-        p = Pila()
+        p = Stack()
         aux = self.__inicio
         while(aux is not None):
-            p.apilar(aux.info)
+            p.push(aux.info)
             aux = aux.sig
-        while(not p.pila_vacia()):
-            print(p.desapilar())
+        while(not p.is_empty()):
+            print(p.pop())
 
     def barrido_porc_victorias(self):
         aux = self.__inicio
