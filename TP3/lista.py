@@ -1,4 +1,4 @@
-
+from pila import Stack
 
 def criterio(dato, campo=None):
     dic = {}
@@ -20,10 +20,6 @@ class Lista():
         self.__inicio = None
         self.__tamanio = 0
         
-    def busqueda(list_values, criterio, value):
-        for index, personaje in enumerate(list_values):
-            if personaje[criterio] == value:
-                return index
 
     def insertar(self, dato, campo=None):
         nodo = nodoLista()
