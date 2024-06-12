@@ -682,13 +682,7 @@ for name in Sable_de_luz:
   
 print()
 print()
-
-#Punto G
-
-
-print()
-print()                 
-    
+              
 #Punto I
 print("Los jedis que alcanzaron el rango Grand Master son:")
 for jedi in jedis:
