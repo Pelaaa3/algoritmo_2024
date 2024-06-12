@@ -153,6 +153,9 @@ def especies(dinosaurios):
 cantidad_especies = especies(dinosaurios)
 print("La cantidad de especies de dinosaurios que aparecen en la lista es:",cantidad_especies)
 
+print()
+print()
+
 #Punto B
 def descubridores(dinosaurios):
   descubridores = set()
@@ -163,11 +166,17 @@ def descubridores(dinosaurios):
 cantidad_descubridores = descubridores(dinosaurios)
 print("La cantidad de descubridores de dinosaurios que aparecen en la lista es:",cantidad_descubridores)
 
+print()
+print()
+
 #Punto C
 print("Los dinosaurios que empiezan con la Letra T son:")
 for dinos in dinosaurios:
   if dinos["nombre"].startswith("T"):
     print(dinos["nombre"])
+    
+print()
+print()
     
 #Punto D
 Pila_peso = Queue()
@@ -180,6 +189,9 @@ print("Dinosaurios con peso menor a 275 KG:")
 while Pila_peso.size() > 0:
   dinos = Pila_peso.attention()
   print(dinos["nombre"])
+
+print()
+print()
 
 #Punto E
 Pila_dinosaurios = Queue()
