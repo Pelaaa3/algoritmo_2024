@@ -1,4 +1,5 @@
 from pila import Stack
+from ClassQueue import Queue
 
 def criterio(dato, campo=None):
     dic = {}

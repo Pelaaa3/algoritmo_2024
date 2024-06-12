@@ -615,7 +615,7 @@ print()
 print()  
   
 #Punto B
-Ahsoka = by_name_jedis(jedis,"Ahsoka Tano")
+Ahsoka = by_name_j(jedis,"Ahsoka Tano")
 if Ahsoka:
   print ("informacion de Ahsoka Tano:")
   for key, value in Ahsoka.items():
@@ -624,7 +624,7 @@ if Ahsoka:
 print()
 print()
 
-kit = by_name_jedis(jedis,"Kit Fisto")
+kit = by_name_j(jedis,"Kit Fisto")
 if Ahsoka:
   print ("informacion de Kit Fisto:")
   for key, value in kit.items():
@@ -644,7 +644,7 @@ print()
 print()            
 
 #Punto D
-especies = by_name_especie(jedis, "Human")
+especies = by_name_specie(jedis, "Human")
 print("Los Humanos de la lista son los siguientes:")
 for jedi in especies:
   print(jedi["name"]," Especie:", jedi["species"])
@@ -652,7 +652,7 @@ for jedi in especies:
 print()
 print()
   
-especies = by_name_especie(jedis, "Twi'lek")
+especies = by_name_specie(jedis, "Twi'lek")
 print("Los Twi'lek de la lista son los siguientes:")
 for jedi in especies:
   print(jedi["name"]," Especie:", jedi["species"])

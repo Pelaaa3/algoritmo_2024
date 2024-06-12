@@ -1,9 +1,9 @@
-def by_name_jedis(lista,item):
+def by_name_j(lista,item):
   for jedi in lista:
     if jedi["name"] == item:
       return jedi
     
-def by_name_especie(lista, item):
+def by_name_specie(lista, item):
     jedi_especie = []
     for jedi in lista:
         if jedi['species'] == item:
@@ -16,8 +16,6 @@ def by_temp(item):
 def by_hegiht(item):
     return item['altura']
 
-def by_house(item):
-    return item['casa_comic']+item['nombre']
 
 def search(list_values, criterio, value):
     for index, element in enumerate(list_values):
