@@ -684,10 +684,7 @@ print()
 print()
 
 #Punto G
-for jedi in range (len(jedis)):
-    if jedis[jedi]["lightsaber_color"] is not None:
-        if "/" in jedis[jedi]["lightsaber_color"]:
-            print(f'Nombres sable de luz +1 color: {jedis[jedi]["name"]}')
+
 
 print()
 print()                 
