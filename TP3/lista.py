@@ -1,5 +1,4 @@
-from pila import Stack
-from ClassQueue import Queue
+from pil import Pila
 
 def criterio(dato, campo=None):
     dic = {}
@@ -16,11 +15,11 @@ class nodoLista():
 
 
 class Lista():
-    
+
     def __init__(self):
         self.__inicio = None
         self.__tamanio = 0
-        
+
 
     def insertar(self, dato, campo=None):
         nodo = nodoLista()
@@ -55,13 +54,13 @@ class Lista():
             aux = aux.sig
 
     def barrido_inverso(self):
-        p = Stack()
+        p = Pila()
         aux = self.__inicio
         while(aux is not None):
-            p.push(aux.info)
+            p.apilar(aux.info)
             aux = aux.sig
-        while(not p.is_empty()):
-            print(p.pop())
+        while(not p.pila_vacia()):
+            print(p.desapilar())
 
     def barrido_porc_victorias(self):
         aux = self.__inicio
@@ -148,3 +147,75 @@ class Lista():
             #     aux1 = aux1.sig
 
             aux = aux.sig
+
+    def barrido_comienza_con(self, iniciales=[]):
+        aux = self.__inicio
+        while(aux is not None):
+            if(aux.info.nombre[0] in iniciales):
+                print(aux.info)
+            aux = aux.sig
+
+    def barrido_anio(self,anio):
+        aux = self.__inicio 
+        while(aux is not None):
+            if(aux.info.estreno == anio):
+                print(aux.info)
+            aux = aux.sig
+
+    def copiar(self,listaux,campo):
+        aux = self.__inicio 
+        while(aux is not None):
+            listaux.insertar(aux.info,campo)
+            aux = aux.sig
+    
+    def vaciar(self):
+        while(not self.lista_vacia()):
+            self.eliminar(self.obtener_elemento(0))
+
+    def mayor(self, campo):
+        mayor = self.__inicio
+        aux = self.__inicio
+        while(aux is not None):
+            if(criterio(aux.info,campo) > criterio(mayor.info,campo)):
+                mayor = aux
+                break
+            aux = aux.sig
+        return mayor
+
+    def busqueda(self, buscado, campo=None):
+        pos = None
+        aux = self.__inicio
+        while(aux is not None and pos is None):
+            if(criterio(aux.info, campo) == buscado):
+                pos = aux
+            aux = aux.sig
+
+        return pos
+
+    def eliminar(self, clave, campo=None):
+        dato = None
+        if(criterio(self.__inicio.info, campo) == clave):
+            dato = self.__inicio.info
+            self.__inicio = self.__inicio.sig
+        else:
+            anterior = self.__inicio
+            actual = self.__inicio.sig
+            while(actual is not None and criterio(actual.info, campo) != clave):
+                anterior = anterior.sig
+                actual = actual.sig
+
+            if(actual is not None):
+                dato = actual.info
+                anterior.sig = actual.sig
+
+        return dato
+
+    def obtener_elemento(self, indice):
+        if(indice <= self.__tamanio-1 and indice >= 0):
+            aux = self.__inicio
+            for i in range(indice):
+                aux = aux.sig
+            return aux.info            
+        else:
+            return None
+

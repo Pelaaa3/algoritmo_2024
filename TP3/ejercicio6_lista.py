@@ -67,7 +67,7 @@ super_heroes = [
     "nombre": "Superman",
     "año_aparicion": 1938,
     "casa_comic": "DC Comics",
-    "biografia": "El Hombre de Acero, uno de los héroes más icónicos de DC con superpoderes sobrehumanos."
+    "biografia": "El Hombre de Acero, uno de los héroes más icónicos de DC con superpoderes sobrehumanos, se lo conoce ademas por su famoso traje."
   },
   {
     "nombre": "Batman",
@@ -165,21 +165,27 @@ super_heroes = [
 #Elminar el nodo de Linterna verde
 criterio = "nombre"
 eliminar = "Linterna Verde"
-result_delete = remove(super_heroes, criterio , eliminar)
-print(f'Eliminar {eliminar} resultado: {result_delete}')
+result_del = remove(super_heroes, criterio , eliminar)
+print(f'Eliminar {eliminar} resultado: {result_del}')
 
-
-#Año de aparicio de Wolverine
+print()
+print()
+#Anio de aparicion de Wolverine
 
 index = search(super_heroes, "nombre", "Wolverine")
 if index is not None:
-    print(f"El Año de aparicio de {super_heroes[index]['nombre']} fue {super_heroes[index]['año_aparicion']}")
-    
+    print(f"El Anio de aparicion de {super_heroes[index]['nombre']} fue {super_heroes[index]['año_aparicion']}")
+
+print()
+print()    
+
 # mostrar el nombre de aquellos superhéroes que en su biografía menciona la palabra
 #“traje” o “armadura”;
 for index, heroe in enumerate(super_heroes):
     if 'traje' in heroe['biografia'] or 'armadura' in heroe['biografia']:
         print(index, heroe['nombre'], heroe['biografia'])  
+print()
+print()
 
 # mostrar el nombre y la casa de los superhéroes cuya fecha de aparición
 #sea anterior a 1963;
@@ -187,6 +193,8 @@ for index, heroe in enumerate(super_heroes):
     if heroe["año_aparicion"] <= 1963:
       print(index, heroe["nombre"], heroe["casa_comic"])
       
+print()
+print()
       
 #mostrar la casa a la que pertenece Capitana Marvel y Mujer Maravilla;
 
@@ -196,16 +204,25 @@ if index is not None:
   print(f"{super_heroes[index]['nombre']} pertenece a {super_heroes[index]['casa_comic']}")
   print(f"{super_heroes[index2]['nombre']} pertenece a {super_heroes[index2]['casa_comic']}")
 
+print()
+print()
+
 ##g. mostrar toda la información de Flash y Star-Lord;
 for heroe in super_heroes:
     if "Flash" in heroe["nombre"] or "Star-Lord" in heroe["nombre"]:
         print(heroe)
+        
+print()
+print()
         
 #h. listar los superhéroes que comienzan con la letra B, M y S;
 
 for index, heroe in enumerate(super_heroes):
   if heroe["nombre"].startswith(("B","S","M")):
     print(index, by_name(heroe))
+    
+print()
+print()
     
 #i. determinar cuántos superhéroes hay de cada casa de comic.
 
@@ -218,6 +235,9 @@ for heroe in super_heroes:
         conteo_casas[casa_comic] += 1
     else:
         conteo_casas[casa_comic] = 1
+        
+print()
+print()
 
 # Imprimir el resultado
 for casa, cantidad in conteo_casas.items():

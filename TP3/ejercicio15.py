@@ -55,24 +55,24 @@ for entrenador in entrenadores:
 lista_entrenadores.barrido_lista_lista()
 print()
 
-
+#a
 entrenador = input('Ingrese nombre del entrenador ')
 pos = lista_entrenadores.busqueda(entrenador,'nombre')
 if(pos):
     print('El entrenador tiene:',pos.sublista.tamanio(),'pokemons')
 
-
+#b
 print()
 print('Entrenadores que hayan ganado más de tres torneos: ')
 lista_entrenadores.barrido_entrenador_mas_tres()
 
-
+#c
 print()
 print('Pokémon de mayor nivel del entrenador con mayor cantidad de torneos ganados: ')
 mayor = lista_entrenadores.mayor('torneos_ganados')
 print(mayor.info, mayor.sublista.mayor('nivel').info)
 
-
+#d
 print()
 entrenador = input('Ingrese nombre del entrenador que desea saber datos y sus Pokémons: ')
 pos = lista_entrenadores.busqueda(entrenador,'nombre')
@@ -81,38 +81,39 @@ if(pos):
     print('sus pokemons:')
     pos.sublista.barrido()
 
-
+#e
 print()
 print("Entrenadores con mas del 79% de batallas ganadas:")
 lista_entrenadores.barrido_porc_victorias()
 
-
+#f
 print()
 print("Entrenadores con Pokemones de tipo fuego y planta o agua/volador:")
 lista_entrenadores.barrido_tipo_subtipo()
 
-
+#g
 print()
 entrenador = input('Ingrese nombre del entrenador que desea saber promedio de nivel de los Pokémons ')
 pos = lista_entrenadores.busqueda(entrenador,'nombre')
 if(pos):
     print("El promedio de nivel de los Pokémons del entrenador",pos.info.nombre,"es",pos.sublista.barrido_promedio())
 
-
+#h
 print()
 pokemon = input('Ingrese pokemon: ')
 print(lista_entrenadores.barrido_cuantos_tienen_pokemon(pokemon), 'entrenadores tienen el pokemon', pokemon)
 
-
+#i
+# mostrar los entrenadores que tienen Pokémons repetidos
 print()
 print('Entrenadores con pokemons repetidos:',lista_entrenadores.barrido_repetidos())
 
-
+#j
 print()
 print("Entrenadores que tienen uno de los siguientes Pokémons: Tyrantrum, Terrakion o Wingull:")
 lista_entrenadores.barrido_tiene_pokemon(['Tyrantrum', 'Terrakion', 'Wingull'])
 
-
+#k
 print()
 entrenador = input('Ingrese nombre del entrenador X: ')
 pos = lista_entrenadores.busqueda(entrenador,'nombre')
